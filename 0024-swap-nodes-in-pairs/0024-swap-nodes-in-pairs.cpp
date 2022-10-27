@@ -29,10 +29,10 @@ public:
         if(!head)
             return head;
         ListNode *curr = head;
-        if(!curr or !curr->next)
+        if(!head or !head->next)
             return head;
         else
-            head = swap(curr,curr->next);
+            head = swap(head,head->next);
         
         return head;
        
