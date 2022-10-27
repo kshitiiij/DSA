@@ -26,12 +26,12 @@ public:
     }
     
     ListNode* swapPairs(ListNode* head) {
-        if(!head or !head->next)
+        ListNode *curr = head;
+        if(!curr or !curr->next)
             return head;
         else
-            head = swap(head,head->next);
-        
-        return head;
+            head = swap(curr,curr->next);
        
+        return head;
     }
 };
