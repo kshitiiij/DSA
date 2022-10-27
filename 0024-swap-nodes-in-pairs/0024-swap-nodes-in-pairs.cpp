@@ -26,9 +26,6 @@ public:
     }
     
     ListNode* swapPairs(ListNode* head) {
-        if(!head)
-            return head;
-        ListNode *curr = head;
         if(!head or !head->next)
             return head;
         else
