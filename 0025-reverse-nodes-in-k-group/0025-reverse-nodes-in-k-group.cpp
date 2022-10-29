@@ -12,8 +12,8 @@ class Solution {
 public:
     int size=0;
     
-    ListNode *rev(ListNode *curr, int k) {
-        ListNode *next=NULL,*temp = curr,*prev=NULL;
+    ListNode *rev(ListNode *prev, ListNode *curr, int k) {
+        ListNode *next=NULL,*temp = curr;
         if(size<k)
             return temp;
         int count = k;
@@ -26,7 +26,7 @@ public:
         }
         size -=k;
         if(next) {
-            temp->next = rev(curr,k);
+            temp->next = rev(NULL,curr,k);
         }
         return prev;
     }
@@ -38,7 +38,7 @@ public:
         while(curr) {
             curr=curr->next; size++;
         }
-        head = rev(head,k);
+        head = rev(NULL,head,k);
         return head;
     }
 };
