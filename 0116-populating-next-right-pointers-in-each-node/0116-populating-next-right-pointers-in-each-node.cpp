@@ -39,9 +39,7 @@ public:
             }
             
             for(int i=0;i<v.size();i++) {
-                if(i==v.size()-1)
-                    v[i]->next = NULL;
-                else
+                if(i!=v.size()-1)
                     v[i]->next = v[i+1];
             }
         }
