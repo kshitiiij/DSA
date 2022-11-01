@@ -10,8 +10,7 @@
  */
 class Solution {
 public:
-    ListNode *slow=NULL,*fast=NULL,*prev=NULL;
-    
+    ListNode *slow,*fast;
     ListNode *rec(ListNode *curr) {
         if(fast) {
             if(curr==slow->next)
@@ -38,11 +37,9 @@ public:
         slow=head;
         fast=head;
         while(fast and fast->next) {
-            
             slow = slow->next;
             fast = fast->next->next;
         }
-        // prev=slow;
         rec(head);
         
     }
