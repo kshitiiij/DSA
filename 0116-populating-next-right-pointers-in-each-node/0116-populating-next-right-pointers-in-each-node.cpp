@@ -19,12 +19,11 @@ public:
 class Solution {
 public:
     Node* connect(Node* root) {
-        queue<Node*> q;
+        
         if(!root)
             return root;
-        
+        queue<Node*> q;
         q.push(root);
-        root->next=NULL;
         while(!q.empty()) {
             int size = q.size();
             vector<Node*> v;
@@ -33,9 +32,10 @@ public:
                 Node *te = q.front();
                 q.pop();
                 v.push_back(te);
-                if(te->left) q.push(te->left);
-                if(te->right) q.push(te->right);
-                
+                if(te->left) 
+                    q.push(te->left);
+                if(te->right) 
+                    q.push(te->right);
             }
             
             for(int i=0;i<v.size();i++) {
